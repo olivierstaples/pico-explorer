@@ -21,12 +21,12 @@ display_buffer = bytearray(width * height * 2)
 explorer.init(display_buffer)
 
 while True:
-    temperature = str(bmp.temperature)
-    explorer.set_pen(0, 102, 204)    
+    temperature = bmp.temperature
+    explorer.set_pen(0, 0, 0)    
     explorer.clear()
     
     explorer.set_pen(255, 255, 255)
-    explorer.text(str(temperature), 20, 130, 200, 4)
+    explorer.text(str(temperature) + " C", 20, 110, 200, 5)
     
     explorer.update()
     time.sleep(1)
